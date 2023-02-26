@@ -27,6 +27,7 @@ namespace Bakery.Tests
       Assert.AreEqual(3, breadOrderVal);
     }
 
+    [TestMethod]
     public void GetUserCost_GetsUserCost_Cost()
     {
       int breadOrder = 3;
@@ -34,6 +35,19 @@ namespace Bakery.Tests
       int breadOrderVal = newBread.BreadOrder;
       int breadOrderCost = newBread.BreadCost;
       Assert.AreEqual(10, breadOrderCost);
-    } 
+    }
+
+    [TestMethod]
+
+    public void GetUserTotal_GetsTotalCost_TotalCost()
+    {
+      int breadOrder = 3;
+      int pastryOrder = 4;
+      Bread newBread = new Bread(breadOrder);
+      Pastry newPastry = new Pastry(pastryOrder);
+      int  totalCost = newBread.BreadCost + newPastry.PastryCost;
+      Assert.AreEqual(16, totalCost);
+    }
+
   }
 }
