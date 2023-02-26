@@ -6,16 +6,21 @@ namespace Bakery.Models
 	public class Pastry
 	{
 		private int _pastryOrder;
-
+		private int _pastryCost;
+		
+		public int PastryCost 
+		{
+			get { return _pastryCost; }
+		}
 		public int PastryOrder
 		{
 			get { return _pastryOrder; }
 		}
-		public Pastry(int userOrder)
+		public Pastry(int userPastryOrder)
 		{
-		int	_pastryOrder = userOrder;
-		}
-			
+		_pastryOrder = userPastryOrder;
+		_pastryCost = ((((_pastryOrder/4)*3)*2)+((_pastryOrder%4)*2));
+		}			
 	}
 }
 

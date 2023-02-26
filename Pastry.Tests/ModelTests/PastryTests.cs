@@ -20,8 +20,18 @@ namespace Bakery.Tests
     {
       int pastryOrder = 4;
       Pastry newPastry = new Pastry(pastryOrder);
-      int result = newPastry;
-      Assert.AreEqual(pastryOrder, result);
+      int pastryOrderVal = newPastry.PastryOrder;
+      int pastryOrderCost = newPastry.PastryCost;
+      Assert.AreEqual(4, pastryOrderVal);
     }
+
+    public void GetUserCost_GetsUserCost_Cost()
+    {
+      int pastryOrder = 4;
+      Pastry newPastry = new Pastry(pastryOrder);
+      int pastryOrderVal = newPastry.PastryOrder;
+      int pastryOrderCost = newPastry.PastryCost;
+      Assert.AreEqual(6, pastryOrderCost);
     }
-	}
+  }
+}
